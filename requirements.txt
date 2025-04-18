@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Prices</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
+        th { background-color: #ffc107; color: black; }
+    </style>
+</head>
+<body>
+    <h1>Live Stock Data</h1>
+    <table>
+        <tr>
+            <th>Ticker</th>
+            <th>Price (USD)</th>
+            <th>Change</th>
+            <th>% Change</th>
+            <th>Volume</th>
+            <th>52 Week Range</th>
+            <th>P/E (TTM)</th>
+        </tr>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock.ticker }}</td>
+            <td>{{ stock.price }}</td>
+            <td>{{ stock.change_price }}</td>
+            <td>{{ stock.change_percent }}</td>
+            <td>{{ stock.volume }}</td>
+            <td>{{ stock.week_range }}</td>
+            <td>{{ stock.pe_ratio }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
